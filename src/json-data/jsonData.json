@@ -1,0 +1,59 @@
+{
+    "navBars": ["Home", "Products"],
+    "logoImage": "",
+    "orgName": "Creative Engineering",
+    "section1": {
+        "part1": "Precision Enginnering Solutions for Your Manufacturing Needs",
+        "part2": "Creative Engineers offers high-quality precision engineering component manufacturing and sub-assembly solutions. Our skilled professionals ensure international standards and efficient production."
+    },
+    "section2": {
+        "part1": "Delivering Excellence in Precision Engineering Components and Sub-Assemblies",
+        "part2": "At Creative Engineers, we take pride in manufacturing and providing international quality products and services. Our skilled professionals ensure that every product meets the highest standards of precision and reliability.",
+        "buttonName": "Get Started",
+        "img1": ""
+    },
+    "section3": {
+        "part1": {
+            "header": "Skilled Professionals",
+            "paragraph": "Our team consists of highly skilled and efficient professionals who ensure the production of international quality products and services."
+        },
+        "part2": {
+            "header": "Low & Medium Batch Qty",
+            "paragraph": "We specialize in handling low and medium batch quantities, providing customized solutions to meet our customers' requirements."
+        },
+        "part3": {
+            "header": "Custom Solutions",
+            "paragraph": "At Creative Engineers, we offer tailor-made solutions to cater to the unique needs of our customers, ensuring their satisfaction."
+        }
+    },
+    "section4": {
+        "header": "Testimonial",
+        "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tincidunt sagittis eros. Quisque quis euismod lorem.",
+        "cards": [
+            {
+                "name": "Sunil Dalal",
+                "position": "Head of Purchasing/ MAN",
+                "img": "",
+                "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tincidunt sagittis eros."
+            },
+            {
+                "name": "Sunil Dalal",
+                "position": "Head of Purchasing/ MAN",
+                "img": "",
+                "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tincidunt sagittis eros."
+            },
+            {
+                "name": "Sunil Dalal",
+                "position": "Head of Purchasing/ MAN",
+                "img": "",
+                "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tincidunt sagittis eros."
+            },
+            {
+                "name": "Sunil Dalal",
+                "position": "Head of Purchasing/ MAN",
+                "img": "",
+                "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tincidunt sagittis eros."
+            }
+        ]
+    }
+}
