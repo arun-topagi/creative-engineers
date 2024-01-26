@@ -2,9 +2,15 @@ import React from 'react'
 
 function Banner() {
   return (
-    <div style={{height:'250px', marginBottom:'10px', lineHeight:'20px', width:'100%', position:'relative', overflow:'hidden'}}>
-        <div style={{height:'100%', width:'100%', position:'absolute', top:'0px', left:'0px', backgroundColor:'rgb(229, 227, 223)'}}>
-
+    <div style={{height:'250px', marginBottom:'10px', lineHeight:'20px', width:'100%', position:'relative', overflow:'hidden',display:'flex', justifyContent:'center'}}>
+        <div style={{height:'100%', width:'80%', backgroundColor:'rgb(229, 227, 223)'}}>
+        <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3753.0228068677848!2d75.2471195!3d19.8389879!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdb9a2db14ffce9%3A0xefcd2bf86074f86!2sCREATIVE%20ENGINEERS!5e0!3m2!1sen!2sin!4v1706277431427!5m2!1sen!2sin"
+        width="100%"
+        height="100%"
+        style={{ border: "0" }}
+        loading="lazy"
+      ></iframe>
         </div>
     </div>
   )
