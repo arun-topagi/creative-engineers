@@ -7,18 +7,15 @@ import SectionThree from '@/components/SectionThree';
 import About from './about/page';
 
 
-
-
 const Home = () => {
-
-return (
-  <div style={{padding:0}}>
-    <HeroSection/>
-    <Sectiontwo/>
-    <SectionThree/>
-    <About/>
-  </div>
-);
+  return (
+    <div style={{ padding: 0 }}>
+      <HeroSection />
+      <Sectiontwo />
+      <SectionThree />
+      <About />
+    </div>
+  );
 
 };
 
