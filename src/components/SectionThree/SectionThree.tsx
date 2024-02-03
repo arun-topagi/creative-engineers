@@ -46,7 +46,7 @@ const SectionThree = () => {
     <div style={{ margin: 'auto', width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2rem', paddingTop: '1rem' }}>
       <Typography style={{ fontSize: '2.25rem', fontFamily: 'Montserrat, sans-serif', textAlign: 'center' }}>{json.section4.header}</Typography>
       <Typography style={{ maxWidth: 530, textAlign: 'center', marginLeft: 'auto', marginRight: 'auto', marginBottom: '1rem', fontFamily: 'Montserrat, sans-serif' }}>{json.section4.paragraph}</Typography>
-      <div style={{ width: '75%', marginLeft: 'auto', marginRight: 'auto' }}>
+      <div style={{ width: '65%'}}>
         <Slider {...settings}>
           {json.section4.cards.map((card, index) => (
             <div key={index}>

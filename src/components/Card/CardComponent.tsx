@@ -8,7 +8,7 @@ function CardComponent(props: any) {
   const {key} = props;
   const { isMobile, isTablet, isDesktop } = useScreenDetector();
   return (
-    <Card style={{ display:'flex', flexDirection:'column', justifyContent:'space-between', alignItems:'flex-start', backgroundColor:'#fff', padding:10, maxWidth:'384px'}} key={key} className='card'>
+    <Card style={{ display:'flex', flexDirection:'column', justifyContent:'space-between', alignItems:'flex-start', backgroundColor:'#fff', padding:10, maxWidth:'384px',marginLeft:isDesktop ? '1rem' : ""}} key={key} className='card'>
       <Typography style={{marginBottom:'2rem', fontFamily:'Montserrat, sans-serif',}}>{json.section4.cards[0].paragraph}</Typography>
       <div style={{display:'flex', alignItems:'center', alignSelf:'stretch'}}>
         <Image src='https://assets-global.website-files.com/62434fa732124a0fb112aab4/62434fa732124a28a812aad9_placeholder%202.svg'
