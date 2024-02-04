@@ -3,15 +3,19 @@
 import { useScreenDetector } from '@/hooks/useScreenDetector';
 import { Image, Typography } from 'antd';
 import React from 'react'
+import companyLogo from '../../assets/logo.png';
+import Logo from '../logo/Logo';
 
 function Footer() {
     const {isMobile} = useScreenDetector();
   return (
     <div style={{padding:'1.25rem', backgroundColor:'#f5f7fa', position:'relative', borderBottom:'1px solid #e4ebf3', paddingLeft: isMobile? "15px" : "", paddingRight: isMobile ? '15px' : ""}}>
         <div style={{width:'100%', maxWidth:isMobile ? "728px" :'90%', marginLeft:'auto', marginRight:'auto'}}>
-            <div style={{display:'flex', flexDirection: isMobile ? 'column' : "row" ,justifyContent:'space-between', marginLeft: 'auto', marginRight: 'auto', alignItems:isMobile ? 'center' :'flex-start', maxWidth:' 100%'}}>
+            <div style={{display:'flex', flexDirection: isMobile ? 'column' : "row" ,justifyContent:'space-between', marginLeft: 'auto', marginRight: 'auto', alignItems:isMobile ? 'center' :'flex-start',
+            //  maxWidth:' 100%'
+             }}>
                 <a href='' style={{color:'#43464d', textDecoration: 'underline', transition:'opacity .2s', display: isMobile ? "inline-block" : "block"}}>
-                    <img src='https://assets-global.website-files.com/62434fa732124a0fb112aab4/62434fa732124a332512aaee_placeholder-1.svg' loading='lazy' alt='Company Logo' style={{display: isMobile ? 'block' : 'inline-block', maxWidth:'100%', verticalAlign: 'middle'}}/>
+                    <Logo className="object-cover" src={companyLogo} height={100} width={150}/>
                 </a>
                 <div style={{display: isMobile ? 'block' :'grid', gridAutoColumns:'1fr', gridTemplateColumns: 'auto auto 1fr', gridTemplateRows:'auto', gridColumnGap:isMobile? "60px":'70px', gridRowGap:'40px', marginTop: isMobile? '14px' : ''}}>
                     <div style={{display:'flex', flexDirection:'column', justifyContent: isMobile ? 'center': '', alignItems:isMobile? 'center':'', gridArea: isMobile ? "span 1 / span 1 / span 1 / span 1" : "" }}>

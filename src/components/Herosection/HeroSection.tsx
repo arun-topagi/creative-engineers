@@ -2,10 +2,18 @@ import { Typography } from "antd";
 import React from "react";
 import * as json from "../../json-data/jsonData.json";
 import { useScreenDetector } from "@/hooks/useScreenDetector";
-
+import Image from 'next/image';
+import heroImage from '../../../public/section/hero.jpg'
 
 function HeroSection() {
   const { isMobile, isTablet, isDesktop } = useScreenDetector();
+
+  const backgroundImageStyle = {
+    backgroundImage: `url(${heroImage.src})`, // Use the image source
+    backgroundSize: "cover", // Adjust as needed
+    backgroundPosition: "center", // Adjust as needed
+  };
+
   return (
     <div
       style={{
@@ -17,7 +25,7 @@ function HeroSection() {
         background: "linear-gradient(to top, #000 12%, #fff)",
         marginLeft: "auto",
         marginRight: "auto",
-        // background:(to top, #000 12%, #fff);
+        ...backgroundImageStyle,
       }}
     >
       <div
@@ -25,9 +33,9 @@ function HeroSection() {
           display: "flex",
           flexDirection: "column",
           maxWidth:'78rem',
-        //   padding:"4rem 30rem"
         }}
       >
+        
         <Typography
           style={{
             fontSize: isMobile ? "1.875rem" : "3.125rem",

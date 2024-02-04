@@ -3,6 +3,9 @@ import { Button, Col, Row, Typography } from "antd";
 import * as json from "../../json-data/jsonData.json";
 import { Image } from 'antd';
 import { useScreenDetector } from "@/hooks/useScreenDetector";
+import precission from '../../../public/section/precision.jpg'
+import precission2 from '../../../public/section/precision2.jpg'
+import Logo from "../logo/Logo";
 
 function Sectiontwo() {
   const { isMobile, isTablet, isDesktop } = useScreenDetector();
@@ -21,13 +24,14 @@ function Sectiontwo() {
     <Button style={{backgroundColor:'#1a1b1f', letterSpacing:2, padding:'0.75rem 1.563rem', textTransform:'uppercase', lineHeight:'1.25rem', height:'min-content', color:'#fff', border:0, borderRadius:0, textDecoration:'none', display:'inline-block', marginBottom:isMobile?'1rem':''}}>Get Started</Button>
     </Col>
     <Col xs={24} xl={12} md={12} lg={12} style={{width:'70%', padding:!isMobile?'2rem':''}}>
-    <Image  src="https://assets-global.website-files.com/62434fa732124a0fb112aab4/62434fa732124a2a3312aae1_placeholder%203.svg" />
+    {/* <Image  src={precission} /> */}
+    <Logo src={precission} height={500} width={500}/>
     </Col>
   </Row>
 
   <Row style={{padding:isDesktop? '1rem 12rem':"1rem 1rem", backgroundColor:'#f5f7fa'}}>
     <Col xs={24} xl={12} md={12} lg={12}  style={{width:'70%', padding:!isMobile?'2rem':''}}>
-    <Image  src="https://assets-global.website-files.com/62434fa732124a0fb112aab4/62434fa732124a28a812aad9_placeholder%202.svg" />
+    <Logo src={precission2} height={500} width={500}/>
     </Col>
     <Col xs={24} xl={12} md={12} lg={12} style={{width:'70%', display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'flex-start', paddingLeft:!isMobile?'2rem':'', marginTop: isMobile?'2rem':''}}>
     <Typography style={{fontSize:'1.375rem',marginTop:0, marginBottom: '0.625rem', lineHeight:'1.563rem', fontWeight:600, fontFamily:'Montserrat, sans-serif'}}>

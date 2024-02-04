@@ -16,9 +16,7 @@ function Navbar() {
   const searchParams = useSearchParams()
   const pathname = usePathname()
 
-  useEffect(()=>{
-console.log("------->",pathname)
-  },[])
+
   return (
     <div>
       {isMobile ? (
