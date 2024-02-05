@@ -75,7 +75,7 @@ function TextField(props:any) {
                   fontSize: '14px',
                   lineHeight: '26px',
                   transition: 'border-color .4s',
-                  marginBottom: isMobile ? '25px' : '18px',
+                  // marginBottom: isMobile ? '25px' : '18px',
                   height: '2.375rem',
                 }}
               />
@@ -99,7 +99,7 @@ function TextField(props:any) {
                   fontSize: '14px',
                   lineHeight: '26px',
                   transition: 'border-color .4s',
-                  marginBottom: isMobile ? '25px' : '18px',
+                  // marginBottom: isMobile ? '5px' : '8px',
                   height: '2.375rem',
                 }}
               />
@@ -113,6 +113,7 @@ function TextField(props:any) {
           <TextArea
             placeholder="Enter your message"
             style={{
+              marginTop:'1rem',
               borderRadius: '0',
               borderColor: 'black',
               border: '1px solid #e4e4e4',
