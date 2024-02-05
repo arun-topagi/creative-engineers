@@ -4,12 +4,13 @@ import * as json from "../../json-data/jsonData.json";
 import { useScreenDetector } from "@/hooks/useScreenDetector";
 import Image from 'next/image';
 import heroImage from '../../../public/section/hero.jpg'
+import heroImage2 from '../../../public/section/hero2.jpeg'
 
 function HeroSection() {
   const { isMobile, isTablet, isDesktop } = useScreenDetector();
 
   const backgroundImageStyle = {
-    backgroundImage: `url(${heroImage.src})`, // Use the image source
+    backgroundImage: `url(${heroImage2.src})`, // Use the image source
     backgroundSize: "cover", // Adjust as needed
     backgroundPosition: "center", // Adjust as needed
   };

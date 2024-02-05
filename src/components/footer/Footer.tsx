@@ -38,7 +38,7 @@ function Footer() {
             </div>
         </div>
         <div style={{width:'100%', height:'1px', backgroundColor:'#e4ebf3', marginTop: isMobile ? "60px":'20px', marginBottom:'15px'}}></div>
-            <Typography style={{textAlign:'center', fontSize:'14px', lineHeight:'16px'}}>Copyright @ 2024 Creative Enginnering</Typography>
+            <Typography style={{textAlign:'center', fontSize:'14px', lineHeight:'16px'}}>Copyright @ 2024 Creative Enginners</Typography>
     </div>
   )
 }

@@ -1,7 +1,7 @@
 {
     "navBars": ["Home", "Products"],
     "logoImage": "",
-    "orgName": "Creative Engineering",
+    "orgName": "Creative Engineers",
     "section1": {
         "part1": "Precision Enginnering Solutions for Your Manufacturing Needs",
         "part2": "Creative Engineers offers high-quality precision engineering component manufacturing and sub-assembly solutions. Our skilled professionals ensure international standards and efficient production."
@@ -53,19 +53,7 @@
                 "position": "Head of Purchasing/ MAN",
                 "img": "",
                 "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tincidunt sagittis eros."
-            },
-            {
-                "name": "Sunil Dalal",
-                "position": "Head of Purchasing/ MAN",
-                "img": "",
-                "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tincidunt sagittis eros."
-            },
-            {
-                "name": "Sunil Dalal",
-                "position": "Head of Purchasing/ MAN",
-                "img": "",
-                "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tincidunt sagittis eros."
-            }
+            } 
         ]
     }
 }
