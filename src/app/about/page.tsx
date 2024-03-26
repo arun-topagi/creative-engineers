@@ -1,7 +1,7 @@
 "use client";
 import { useScreenDetector } from "@/hooks/useScreenDetector";
 import React, { useState } from "react";
-import About from "@/components/About";
+import About from "@/components/AboutV2";
 import { Typography } from "antd";
 
 function Index() {

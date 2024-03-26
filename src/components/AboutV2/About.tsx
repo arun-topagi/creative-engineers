@@ -3,7 +3,6 @@
 import TextField from "@/components/input";
 import { useScreenDetector } from "@/hooks/useScreenDetector";
 import { Typography } from "antd";
-import { Button, Checkbox, Form, Input } from "antd";
 import React, { useState } from "react";
 
 function About() {
