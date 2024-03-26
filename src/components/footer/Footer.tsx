@@ -12,10 +12,9 @@ function Footer() {
     <div style={{padding:'1.25rem', backgroundColor:'#f5f7fa', position:'relative', borderBottom:'1px solid #e4ebf3', paddingLeft: isMobile? "15px" : "", paddingRight: isMobile ? '15px' : ""}}>
         <div style={{width:'100%', maxWidth:isMobile ? "728px" :'90%', marginLeft:'auto', marginRight:'auto'}}>
             <div style={{display:'flex', flexDirection: isMobile ? 'column' : "row" ,justifyContent:'space-between', marginLeft: 'auto', marginRight: 'auto', alignItems:isMobile ? 'center' :'flex-start',
-            //  maxWidth:' 100%'
              }}>
                 <a href='' style={{color:'#43464d', textDecoration: 'underline', transition:'opacity .2s', display: isMobile ? "inline-block" : "block"}}>
-                    <Logo className="object-cover" src={companyLogo} height={100} width={150}/>
+                    <Logo className="object-cover" src={companyLogo} height={150} width={200}/>
                 </a>
                 <div style={{display: isMobile ? 'block' :'grid', gridAutoColumns:'1fr', gridTemplateColumns: 'auto auto 1fr', gridTemplateRows:'auto', gridColumnGap:isMobile? "60px":'70px', gridRowGap:'40px', marginTop: isMobile? '14px' : ''}}>
                     <div style={{display:'flex', flexDirection:'column', justifyContent: isMobile ? 'center': '', alignItems:isMobile? 'center':'', gridArea: isMobile ? "span 1 / span 1 / span 1 / span 1" : "" }}>

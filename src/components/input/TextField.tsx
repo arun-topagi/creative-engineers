@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { Input, Button, Form } from 'antd';
+import { Input, Button, Form} from 'antd';
 import TextArea from 'antd/es/input/TextArea';
 import axios from 'axios';
 import { useScreenDetector } from '@/hooks/useScreenDetector';
+
+
 
 function TextField(props:any) {
   const { setShowThankYou } = props;
@@ -26,9 +28,12 @@ function TextField(props:any) {
         records: [
           {
             fields: {
+              Company: form.getFieldValue('company'),
+              Address: form.getFieldValue('address'),
               Name: form.getFieldValue('name'),
+              Phone: form.getFieldValue('phone'),
               Email: form.getFieldValue('email'),
-              Message: form.getFieldValue('message'),
+              Requirements: form.getFieldValue('requirements'),
             },
           },
         ],
@@ -62,26 +67,92 @@ function TextField(props:any) {
         <div style={{ display: isDesktop ? 'flex' : '', alignItems: 'center', gap: '2rem' }}>
           <div style={{ width: isDesktop ? '50%' : '100%', paddingRight: isDesktop ? '10px' : '' }}>
             <Form.Item
-              name="name"
-              rules={[{ required: true, message: 'Name is required' }]}
+              name="company"
+              rules={[{ required: true, message: 'Company name is required' }]}
             >
               <Input
-                placeholder="Enter your name"
+                placeholder="Name of Company"
                 style={{
                   borderRadius: '0',
                   borderColor: 'black',
-                  border: '1px solid #e4e4e4',
+                  border: '1px solid #9b9a9a',
                   padding: '1.313rem 1.25rem',
                   fontSize: '14px',
                   lineHeight: '26px',
                   transition: 'border-color .4s',
-                  // marginBottom: isMobile ? '25px' : '18px',
                   height: '2.375rem',
                 }}
               />
             </Form.Item>
           </div>
           <div style={{ width: isDesktop ? '50%' : '100%', paddingRight: isDesktop ? '10px' : '' }}>
+            <Form.Item
+              name="address"
+              rules={[{ required: true, message: 'Address is required' }]}
+            >
+              <Input
+                placeholder="Address/City/Location"
+                style={{
+                  borderRadius: '0',
+                  borderColor: 'black',
+                  border: '1px solid #9b9a9a',
+                  padding: '1.313rem 1.25rem',
+                  fontSize: '14px',
+                  lineHeight: '26px',
+                  transition: 'border-color .4s',
+                  height: '2.375rem',
+                }}
+              />
+            </Form.Item>
+          </div>
+        </div>
+        <div style={{ display: isDesktop ? 'flex' : '', alignItems: 'center', gap: '2rem' }}>
+          <div style={{ width: isDesktop ? '50%' : '100%', paddingRight: isDesktop ? '10px' : '' }}>
+            <Form.Item
+              name="name"
+              rules={[
+                { required: true, message: 'Name is required' },
+                // { type: 'email', message: 'Please enter a valid email address' },
+              ]}
+            >
+              <Input
+                placeholder="Name of Contact Person"
+                style={{
+                  borderRadius: '0',
+                  borderColor: 'black',
+                  border: '1px solid #9b9a9a',
+                  padding: '1.313rem 1.25rem',
+                  fontSize: '14px',
+                  lineHeight: '26px',
+                  transition: 'border-color .4s',
+                  height: '2.375rem',
+                }}
+              />
+            </Form.Item>
+          </div>
+          <div style={{ width: isDesktop ? '50%' : '100%', paddingRight: isDesktop ? '10px' : '' }}>
+            <Form.Item
+              name="phone"
+              rules={[{ required: true, message: 'Phone Number is required' }]}
+            >
+              <Input
+                placeholder="Phone Number"
+                style={{
+                  borderRadius: '0',
+                  borderColor: 'black',
+                  border: '1px solid #9b9a9a',
+                  padding: '1.313rem 1.25rem',
+                  fontSize: '14px',
+                  lineHeight: '26px',
+                  transition: 'border-color .4s',
+                  height: '2.375rem',
+                }}
+              />
+            </Form.Item>
+          </div>
+        </div>
+        <div style={{ display: isDesktop ? 'flex' : '', alignItems: 'center', gap: '2rem' }}>
+          <div style={{ width: isDesktop ? '47%' : '100%', paddingRight: isDesktop ? '10px' : '' }}>
             <Form.Item
               name="email"
               rules={[
@@ -90,16 +161,15 @@ function TextField(props:any) {
               ]}
             >
               <Input
-                placeholder="Enter your email"
+                placeholder="Email"
                 style={{
                   borderRadius: '0',
                   borderColor: 'black',
-                  border: '1px solid #e4e4e4',
+                  border: '1px solid #9b9a9a',
                   padding: '1.313rem 1.25rem',
                   fontSize: '14px',
                   lineHeight: '26px',
                   transition: 'border-color .4s',
-                  // marginBottom: isMobile ? '5px' : '8px',
                   height: '2.375rem',
                 }}
               />
@@ -107,16 +177,16 @@ function TextField(props:any) {
           </div>
         </div>
         <Form.Item
-          name="message"
-          rules={[{ required: false, message: 'Message is required' }]}
+          name="requirements"
+          rules={[{ required: true, message: 'Requirements is required' }]}
         >
           <TextArea
-            placeholder="Enter your message"
+            placeholder="Requirements Details"
             style={{
               marginTop:'1rem',
               borderRadius: '0',
               borderColor: 'black',
-              border: '1px solid #e4e4e4',
+              border: '1px solid #9b9a9a',
               paddingTop: '12px',
               fontSize: '14px',
               lineHeight: '26px',
