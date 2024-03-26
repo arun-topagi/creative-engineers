@@ -27,6 +27,7 @@
         }
     },
     "section4": {
+        "show": false,
         "header": "Testimonial",
         "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tincidunt sagittis eros. Quisque quis euismod lorem.",
         "cards": [

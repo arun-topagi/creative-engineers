@@ -8,21 +8,8 @@ import React, { useState } from "react";
 
 function About() {
   const { isMobile } = useScreenDetector();
-  const onFinish = (values: any) => {
-    console.log("Success:", values);
-  };
-
-  const onFinishFailed = (errorInfo: any) => {
-    console.log("Failed:", errorInfo);
-  };
-
   const [showThankYou, setShowThankYou] = useState(false);
 
-  type FieldType = {
-    username?: string;
-    password?: string;
-    remember?: string;
-  };
   return (
     <div
       style={{
@@ -73,7 +60,12 @@ function About() {
           <div>
             {showThankYou ? (
               <div
-                style={{ marginTop: "1rem", fontSize: "36px", color: "green", textAlign:'center' }}
+                style={{
+                  marginTop: "1rem",
+                  fontSize: "36px",
+                  color: "green",
+                  textAlign: "center",
+                }}
               >
                 Thank You! Your message has been submitted.
               </div>
@@ -88,10 +80,3 @@ function About() {
 }
 
 export default About;
-
-/*
-    there will be frist div will show normally 
-    after submitting the form it will show as
-    -> Thank You for submitting the form
-    -> something went wrong
- */

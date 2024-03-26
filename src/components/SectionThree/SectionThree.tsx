@@ -41,7 +41,9 @@ const SectionThree = () => {
       }
     ]
   };
-
+ if(!json.section4?.show){
+  return null
+ }
   return (
     <div style={{ margin: 'auto', width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2rem', paddingTop: '1rem' }}>
       <Typography style={{ fontSize: '2.25rem', fontFamily: 'Montserrat, sans-serif', textAlign: 'center' }}>{json.section4.header}</Typography>

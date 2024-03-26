@@ -12,10 +12,7 @@ import { usePathname, useSearchParams } from 'next/navigation'
 function Navbar() {
   const { isMobile, isTablet, isDesktop } = useScreenDetector();
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const[activeIndex, setActiveIndex]= useState(0)
-  const searchParams = useSearchParams()
   const pathname = usePathname()
-
 
   return (
     <div>
@@ -77,8 +74,6 @@ function Navbar() {
                     letterSpacing: 1,
                     textTransform: "uppercase",
                     fontSize: 12,
-              
-                    // padding: "8px 8px",
                     fontFamily: "Montserrat, sans-serif",
                     fontWeight:pathname==="/" ? 700:''
                   }}
@@ -153,7 +148,7 @@ function Navbar() {
                 fontSize: 12,
                 marginLeft: 30,
                 fontFamily: "Montserrat, sans-serif",
-                fontWeight:pathname==="/about" ? 700:''
+                fontWeight: pathname==="/about" ? 700:''
               }}
             >
               About

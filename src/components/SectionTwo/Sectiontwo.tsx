@@ -8,7 +8,7 @@ import profession from '../../../public/section/profession.jpg'
 import Logo from "../logo/Logo";
 
 function Sectiontwo() {
-  const { isMobile, isTablet, isDesktop } = useScreenDetector();
+  const { isMobile, isDesktop } = useScreenDetector();
   return (
     <div style={{ width: "100%"}}>
     <Row style={{padding:isDesktop? '1rem 12rem':"1rem 1rem"}}>
