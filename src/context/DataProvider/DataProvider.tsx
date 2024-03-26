@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import DataContext from './context'
 import axios from 'axios'
 
-const DataProvider = ({childern}: {children: React.ReactNode;}) => {
+const DataProvider = ({children}: {children: React.ReactNode;}) => {
     const [data, setData] = useState({})
     useEffect(() => {
         (async() => {
@@ -14,7 +14,7 @@ const DataProvider = ({childern}: {children: React.ReactNode;}) => {
 
   return (
     <DataContext.Provider value={data}>
-        {childern}
+        {children}
     </DataContext.Provider>
   )
 }
