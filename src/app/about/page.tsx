@@ -3,6 +3,7 @@ import { useScreenDetector } from "@/hooks/useScreenDetector";
 import React, { useState } from "react";
 import About from "@/components/AboutV2";
 import { Typography } from "antd";
+import Banner from "@/components/banner";
 
 function Index() {
   const { isMobile } = useScreenDetector();
@@ -53,6 +54,7 @@ our team members are experienced, focused, and equipped with technical skills to
         </Typography>
          
      <About />
+     <Banner />
     </div>
   );
 }

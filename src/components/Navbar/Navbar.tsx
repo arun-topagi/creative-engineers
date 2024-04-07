@@ -95,6 +95,19 @@ function Navbar() {
                   About
                 </Typography>
               </Link>
+              <Link href="/services" style={{textDecoration:'none'}} onClick={()=>setDrawerOpen(false)}>
+                <Typography
+                  style={{
+                    letterSpacing: 1,
+                    textTransform: "uppercase",
+                    fontSize: 12,
+                    fontFamily: "Montserrat, sans-serif",
+                    fontWeight:pathname==="/services"? 700:''
+                  }}
+                >
+                  Services
+                </Typography>
+              </Link>
             </div>
           </Drawer>
         </div>
@@ -152,6 +165,23 @@ function Navbar() {
               }}
             >
               About
+            </Typography>
+            </Link>
+
+            <Link href="/services" style={{textDecoration:'none'}}>
+            <Typography
+              style={{
+                letterSpacing: 1,
+                textTransform: "uppercase",
+                paddingTop: 9,
+                paddingBottom: 9,
+                fontSize: 12,
+                marginLeft: 30,
+                fontFamily: "Montserrat, sans-serif",
+                fontWeight: pathname==="/services" ? 700:''
+              }}
+            >
+              Services
             </Typography>
             </Link>
             
