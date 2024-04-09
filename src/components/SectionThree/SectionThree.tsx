@@ -53,7 +53,7 @@ const SectionThree = () => {
           {json?.section4?.cards.map((card, index) => (
             <div key={index}>
               <CardComponent />
-            </div>
+            </div>  
           ))}
         </Slider>
       </div>

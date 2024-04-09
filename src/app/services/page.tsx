@@ -3,6 +3,7 @@ import { useScreenDetector } from "@/hooks/useScreenDetector";
 import React, { useState } from "react";
 import About from "@/components/AboutV2";
 import { Typography } from "antd";
+import Service from "@/components/service";
 
 function Index() {
   const { isMobile } = useScreenDetector();
@@ -14,7 +15,7 @@ function Index() {
         marginTop: isMobile ? "20px" : "30px"
       }}
     >
-        Sevices
+        <Service/>
     </div>
   );
 }

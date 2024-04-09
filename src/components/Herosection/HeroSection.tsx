@@ -2,8 +2,6 @@ import { Typography } from "antd";
 import React from "react";
 import * as json from "../../json-data/jsonData.json";
 import { useScreenDetector } from "@/hooks/useScreenDetector";
-import Image from 'next/image';
-import heroImage from '../../../public/section/hero.jpg'
 import heroImage2 from '../../../public/section/hero2.jpeg'
 
 function HeroSection() {
