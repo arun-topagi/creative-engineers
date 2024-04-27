@@ -7,8 +7,8 @@ import { useScreenDetector } from "@/hooks/useScreenDetector";
 import { usePathname } from "next/navigation";
 import { Dropdown } from "antd";
 import type { MenuProps } from "antd";
-import Logo from "../logo/Logo";
 import companyLogo from "../../assets/LogoWithoutTagline.png";
+import Logo from "../logo/Logo";
 
 const items: MenuProps["items"] = [
   {
