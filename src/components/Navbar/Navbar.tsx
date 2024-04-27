@@ -198,12 +198,13 @@ function Navbar() {
             backgroundColor: "rgb(228 235 243 / 57%)",
           }}
         >
-          <Logo
+          {/* <Logo
             className="object-cover"
             src={companyLogo}
             height={150}
             width={200}
-          />
+          /> */}
+          Creative Engineers
           <div style={{ display: "flex", alignItems: "center" }}>
             <Link href="/" style={{ textDecoration: "none" }}>
               <Typography
