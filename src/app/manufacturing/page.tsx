@@ -4,34 +4,35 @@ import Logo from "@/components/logo/Logo";
 import { useScreenDetector } from "@/hooks/useScreenDetector";
 import { Tabs, Typography } from "antd";
 import React from "react";
-import BMV60Image from '../../../public/machines/BMV60.png'
-import J300Image from '../../../public/machines/J300.png'
-import latheImage  from '../../../public/machines/lathemachines.png'
-import BFWImage  from '../../../public/machines/BFW.jpg'
+import BMV60Image from "../../../public/machines/BMV60.png";
+import J300Image from "../../../public/machines/J300.png";
+import latheImage from "../../../public/machines/lathemachines.png";
+import BFWImage from "../../../public/machines/BFW.jpg";
 
 const MACHINES = {
-  'BMV60Image': BMV60Image,
-  'latheImage': latheImage,
-  'J300Image': J300Image,
-  'BFWImage': BFWImage
-}
-const {Title} = Typography
-const Card = ({ src, name }: { src: Array<string>, name: string }) => {
+  BMV60Image: BMV60Image,
+  latheImage: latheImage,
+  J300Image: J300Image,
+  BFWImage: BFWImage,
+};
+
+const { Title } = Typography;
+const Card = ({ src, name }: { src: Array<string>; name: string }) => {
   return (
     <div>
       <div style={{ display: "flex", justifyContent: "flex-start" }}>
-        <Title level={4} style={{ marginTop: 5}}>
+        <Title level={4} style={{ marginTop: 5 }}>
           {name}
         </Title>
       </div>
       <div style={{ display: "flex", justifyContent: "space-around" }}>
-        {src.map((image) => (
+        {src.map((image: string, index) => (
           <Logo
-          key={image}
-          src={MACHINES[image]}
-          height={270}
-          width={350}
-        />
+            key={`${image}-${index}`}
+            src={MACHINES[image]}
+            height={270}
+            width={350}
+          />
         ))}
       </div>
     </div>
@@ -41,7 +42,7 @@ const items = [
   {
     label: `Vertical Milling Centre`,
     key: 1,
-    children: <Card src={["BMV60Image"]} name={'BFW BMV Chakra 60+'} />,
+    children: <Card src={["BMV60Image"]} name={"BFW BMV Chakra 60+"} />,
     style: {
       fontSize: 18,
     },
@@ -49,12 +50,19 @@ const items = [
   {
     label: `CNC Turning Machines`,
     key: 2,
-    children: <Card src={["J300Image", 'BFWImage']} name="Ace Jobber J 300 & BFW BVL 550H with Chip Conveyor" />,
+    children: (
+      <Card
+        src={["J300Image", "BFWImage"]}
+        name="Ace Jobber J 300 & BFW BVL 550H with Chip Conveyor"
+      />
+    ),
   },
   {
     label: `Lathe Machines`,
     key: 3,
-    children: <Card src={["latheImage"]} name="Precision heavy Duty Lathe Machines"  />,
+    children: (
+      <Card src={["latheImage"]} name="Precision heavy Duty Lathe Machines" />
+    ),
   },
 ];
 
