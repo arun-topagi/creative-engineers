@@ -46,7 +46,7 @@ const Card = ({ src, name }: { src: Array<string>; name: string }) => {
 const items = [
   {
     label: `Vertical Milling Centre`,
-    key: 1,
+    key: "1",
     children: <Card src={["BMV60Image"]} name={"BFW BMV Chakra 60+"} />,
     style: {
       fontSize: 18,
@@ -54,7 +54,7 @@ const items = [
   },
   {
     label: `CNC Turning Machines`,
-    key: 2,
+    key: "2",
     children: (
       <Card
         src={["J300Image", "BFWImage"]}
@@ -64,7 +64,7 @@ const items = [
   },
   {
     label: `Lathe Machines`,
-    key: 3,
+    key: "3",
     children: (
       <Card src={["latheImage"]} name="Precision heavy Duty Lathe Machines" />
     ),
@@ -100,6 +100,7 @@ function Index() {
           defaultActiveKey="1"
           tabPosition={isMobile ? "top" : "left"}
           items={items}
+          style={{fontSize: "1rem", fontWeight: 500}}
         />
       </div>
       <br />
