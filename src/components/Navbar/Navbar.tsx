@@ -7,7 +7,7 @@ import { useScreenDetector } from "@/hooks/useScreenDetector";
 import { usePathname } from "next/navigation";
 import { Dropdown } from "antd";
 import type { MenuProps } from "antd";
-// import companyLogo from "../../assets/LogoWithoutTagline.png";
+import companyLogo from "../../assets/logoNoTag.png";
 import Logo from "../logo/Logo";
 
 const items: MenuProps["items"] = [
@@ -48,12 +48,12 @@ function Navbar() {
             backgroundColor: "rgb(228 235 243 / 57%)",
           }}
         >
-          {/* <Logo
+          <Logo
             className="object-cover"
             src={companyLogo}
             height={150}
             width={200}
-          /> */}
+          />
           Creative Engineers
           <MenuOutlined
             style={{ fontSize: 25 }}
@@ -198,12 +198,12 @@ function Navbar() {
             backgroundColor: "rgb(228 235 243 / 57%)",
           }}
         >
-          {/* <Logo
+          <Logo
             className="object-cover"
             src={companyLogo}
             height={150}
             width={200}
-          /> */}
+          />
           Creative Engineers
           <div style={{ display: "flex", alignItems: "center" }}>
             <Link href="/" style={{ textDecoration: "none" }}>
