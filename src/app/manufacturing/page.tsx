@@ -8,8 +8,13 @@ import BMV60Image from "../../../public/machines/BMV60.png";
 import J300Image from "../../../public/machines/J300.png";
 import latheImage from "../../../public/machines/lathemachines.png";
 import BFWImage from "../../../public/machines/BFW.jpg";
+import { StaticImageData } from "next/image";
 
-const MACHINES = {
+interface IMACHINESS {
+  [key: string]: StaticImageData
+}
+
+const MACHINES: IMACHINESS = {
   BMV60Image: BMV60Image,
   latheImage: latheImage,
   J300Image: J300Image,
@@ -28,7 +33,7 @@ const Card = ({ src, name }: { src: Array<string>; name: string }) => {
       <div style={{ display: "flex", justifyContent: "space-around" }}>
         {src.map((image: string, index) => (
           <Logo
-            key={`${image}-${index}`}
+            key={index}
             src={MACHINES[image]}
             height={270}
             width={350}
