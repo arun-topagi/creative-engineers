@@ -2,7 +2,7 @@ import { Typography } from "antd";
 import React from "react";
 import * as json from "../../json-data/jsonData.json";
 import { useScreenDetector } from "@/hooks/useScreenDetector";
-import heroImage2 from '../../../public/section/hero2.jpeg'
+import heroImage2 from '../../../public/section/Backgroundimage.webp'
 
 function HeroSection() {
   const { isMobile, isTablet, isDesktop } = useScreenDetector();
@@ -45,9 +45,7 @@ function HeroSection() {
             fontFamily:'Montserrat, sans-serif'
           }}
         >
-          Precision Enginnering <br/>  
-          Solutions for Your <br/>
-          Manufacturing Needs
+          Precisely Engineered, Creatively Transformed.
         </Typography>
         <Typography
           style={{

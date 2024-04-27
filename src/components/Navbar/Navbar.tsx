@@ -1,18 +1,38 @@
 "use client";
-
-
-import { MenuOutlined } from "@ant-design/icons";
-import { Drawer, Typography } from "antd";
-import React, { useEffect, useState } from "react";
-import * as json from "../../json-data/jsonData.json";
+import { DownOutlined, MenuOutlined } from "@ant-design/icons";
+import { Drawer, Space, Typography } from "antd";
+import React, { useState } from "react";
 import Link from "next/link";
 import { useScreenDetector } from "@/hooks/useScreenDetector";
-import { usePathname, useSearchParams } from 'next/navigation'
+import { usePathname } from "next/navigation";
+import { Dropdown } from "antd";
+import type { MenuProps } from "antd";
+import Logo from "../logo/Logo";
+import companyLogo from "../../assets/LogoWithoutTagline.png";
+
+const items: MenuProps["items"] = [
+  {
+    key: "1",
+    label: (
+      <a href="/manufacturing" style={{ textDecoration: "none" }}>
+        Manufacturing
+      </a>
+    ),
+  },
+  {
+    key: "2",
+    label: (
+      <a href="/quality-assurance" style={{ textDecoration: "none" }}>
+        Quality Assurance
+      </a>
+    ),
+  },
+];
 
 function Navbar() {
   const { isMobile, isTablet, isDesktop } = useScreenDetector();
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const pathname = usePathname()
+  const pathname = usePathname();
 
   return (
     <div>
@@ -24,24 +44,16 @@ function Navbar() {
             justifyContent: "space-between",
             alignItems: "center",
             padding: 8,
-            zIndex:100,
+            zIndex: 100,
+            backgroundColor: "rgb(228 235 243 / 57%)",
           }}
         >
-          <Typography
-            style={{
-              flex: 1,
-              flexFlow: "row",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontFamily: "Palatino Linotype, Book Antiqua, Palatino, serif",
-              fontSize: 25,
-              fontWeight: 600,
-              zIndex: "4",
-            }}
-          >
-            {json.orgName}
-          </Typography>
+          <Logo
+            className="object-cover"
+            src={companyLogo}
+            height={150}
+            width={200}
+          />
           <MenuOutlined
             style={{ fontSize: 25 }}
             onClick={() => setDrawerOpen(!drawerOpen)}
@@ -52,9 +64,9 @@ function Navbar() {
             onClose={() => setDrawerOpen(false)}
             open={drawerOpen}
             key="top"
-            style={{ padding: 0, marginTop: 60}}
+            style={{ padding: 0, marginTop: 72 }}
             mask={false}
-            height={110}
+            height={250}
             zIndex={1}
           >
             <div
@@ -65,47 +77,110 @@ function Navbar() {
                 alignItems: "center",
                 padding: 0,
                 overflowY: "hidden",
-                gap:'1rem'
+                gap: "1rem",
               }}
             >
-             <Link href="/" style={{textDecoration:'none'}} onClick={()=>setDrawerOpen(false)}>
+              <Link
+                href="/"
+                style={{ textDecoration: "none" }}
+                onClick={() => setDrawerOpen(false)}
+              >
                 <Typography
                   style={{
                     letterSpacing: 1,
                     textTransform: "uppercase",
                     fontSize: 12,
                     fontFamily: "Montserrat, sans-serif",
-                    fontWeight:pathname==="/" ? 700:''
+                    fontWeight: pathname === "/" ? 700 : "",
                   }}
                 >
                   Home
                 </Typography>
               </Link>
 
-              <Link href="/about" style={{textDecoration:'none'}} onClick={()=>setDrawerOpen(false)}>
+              <Link
+                href="/about"
+                style={{ textDecoration: "none" }}
+                onClick={() => setDrawerOpen(false)}
+              >
                 <Typography
                   style={{
                     letterSpacing: 1,
                     textTransform: "uppercase",
                     fontSize: 12,
                     fontFamily: "Montserrat, sans-serif",
-                    fontWeight:pathname==="/about"? 700:''
+                    fontWeight: pathname === "/about" ? 700 : "",
                   }}
                 >
                   About
                 </Typography>
               </Link>
-              <Link href="/services" style={{textDecoration:'none'}} onClick={()=>setDrawerOpen(false)}>
+              <Link
+                href="/manufacturing"
+                style={{ textDecoration: "none" }}
+                onClick={() => setDrawerOpen(false)}
+              >
                 <Typography
                   style={{
                     letterSpacing: 1,
                     textTransform: "uppercase",
                     fontSize: 12,
                     fontFamily: "Montserrat, sans-serif",
-                    fontWeight:pathname==="/services"? 700:''
+                    fontWeight: pathname === "/manufacturing" ? 700 : "",
                   }}
                 >
-                  Services
+                  Manufacturing
+                </Typography>
+              </Link>
+              <Link
+                href="/quality-assurance"
+                style={{ textDecoration: "none" }}
+                onClick={() => setDrawerOpen(false)}
+              >
+                <Typography
+                  style={{
+                    letterSpacing: 1,
+                    textTransform: "uppercase",
+                    fontSize: 12,
+                    fontFamily: "Montserrat, sans-serif",
+                    fontWeight: pathname === "/quality-assurance" ? 700 : "",
+                  }}
+                >
+                  Quality Assurance
+                </Typography>
+              </Link>
+              <Link
+                href="/downloads"
+                style={{ textDecoration: "none" }}
+                onClick={() => setDrawerOpen(false)}
+              >
+                <Typography
+                  style={{
+                    letterSpacing: 1,
+                    textTransform: "uppercase",
+                    fontSize: 12,
+                    fontFamily: "Montserrat, sans-serif",
+                    fontWeight: pathname === "/downloads" ? 700 : "",
+                  }}
+                >
+                  Downloads
+                </Typography>
+              </Link>
+              <Link
+                href="/contact-us"
+                style={{ textDecoration: "none" }}
+                onClick={() => setDrawerOpen(false)}
+              >
+                <Typography
+                  style={{
+                    letterSpacing: 1,
+                    textTransform: "uppercase",
+                    fontSize: 12,
+                    fontFamily: "Montserrat, sans-serif",
+                    fontWeight: pathname === "/contact-us" ? 700 : "",
+                  }}
+                >
+                  Contact us
                 </Typography>
               </Link>
             </div>
@@ -119,72 +194,103 @@ function Navbar() {
             justifyContent: "space-between",
             alignItems: "center",
             padding: "10px 50px",
+            backgroundColor: "rgb(228 235 243 / 57%)",
           }}
         >
-          <Typography
-            style={{
-              flexFlow: "row",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontFamily: "Palatino Linotype, Book Antiqua, Palatino, serif",
-              fontSize: 25,
-              fontWeight: 600,
-            }}
-          >
-            {json.orgName}
-          </Typography>
+          <Logo
+            className="object-cover"
+            src={companyLogo}
+            height={150}
+            width={200}
+          />
           <div style={{ display: "flex", alignItems: "center" }}>
-            <Link href="/" style={{textDecoration:'none'}}>
-            <Typography
-              style={{
-                letterSpacing: 1,
-                textTransform: "uppercase",
-                paddingTop: 9,
-                paddingBottom: 9,
-                fontSize: 12,
-                fontFamily: "Montserrat, sans-serif",
-                fontWeight:pathname==="/" ? 700:''
-              }}
-            >
-              Home
-            </Typography>
-            </Link>
-            
-            <Link href="/about" style={{textDecoration:'none'}}>
-            <Typography
-              style={{
-                letterSpacing: 1,
-                textTransform: "uppercase",
-                paddingTop: 9,
-                paddingBottom: 9,
-                fontSize: 12,
-                marginLeft: 30,
-                fontFamily: "Montserrat, sans-serif",
-                fontWeight: pathname==="/about" ? 700:''
-              }}
-            >
-              About
-            </Typography>
+            <Link href="/" style={{ textDecoration: "none" }}>
+              <Typography
+                style={{
+                  letterSpacing: 1,
+                  textTransform: "uppercase",
+                  paddingTop: 9,
+                  paddingBottom: 9,
+                  fontSize: 12,
+                  fontFamily: "Montserrat, sans-serif",
+                  fontWeight: pathname === "/" ? 700 : "",
+                }}
+              >
+                Home
+              </Typography>
             </Link>
 
-            <Link href="/services" style={{textDecoration:'none'}}>
-            <Typography
-              style={{
-                letterSpacing: 1,
-                textTransform: "uppercase",
-                paddingTop: 9,
-                paddingBottom: 9,
-                fontSize: 12,
-                marginLeft: 30,
-                fontFamily: "Montserrat, sans-serif",
-                fontWeight: pathname==="/services" ? 700:''
-              }}
-            >
-              Services
-            </Typography>
+            <Link href="/about" style={{ textDecoration: "none" }}>
+              <Typography
+                style={{
+                  letterSpacing: 1,
+                  textTransform: "uppercase",
+                  paddingTop: 9,
+                  paddingBottom: 9,
+                  fontSize: 12,
+                  marginLeft: 30,
+                  fontFamily: "Montserrat, sans-serif",
+                  fontWeight: pathname === "/about" ? 700 : "",
+                }}
+              >
+                About
+              </Typography>
             </Link>
-            
+            <Dropdown menu={{ items }} placement="bottomLeft">
+              <a onClick={(e) => e.preventDefault()}>
+                <Space>
+                  <Typography
+                    style={{
+                      letterSpacing: 1,
+                      textTransform: "uppercase",
+                      paddingTop: 9,
+                      paddingBottom: 9,
+                      fontSize: 12,
+                      fontFamily: "Montserrat, sans-serif",
+                      marginLeft: 30,
+                  fontWeight: pathname === "/quality-assurance" || pathname === "/manufacturing"  ? 700 : "",
+                }}
+                  >
+                    Facilities
+                    <DownOutlined />
+                  </Typography>
+                </Space>
+              </a>
+            </Dropdown>
+
+            <Link href="/downloads" style={{ textDecoration: "none" }}>
+              <Typography
+                style={{
+                  letterSpacing: 1,
+                  textTransform: "uppercase",
+                  paddingTop: 9,
+                  paddingBottom: 9,
+                  fontSize: 12,
+                  marginLeft: 30,
+                  fontFamily: "Montserrat, sans-serif",
+                  fontWeight: pathname === "/downloads" ? 700 : "",
+                }}
+              >
+                Downloads
+              </Typography>
+            </Link>
+
+            <Link href="/contact-us" style={{ textDecoration: "none" }}>
+              <Typography
+                style={{
+                  letterSpacing: 1,
+                  textTransform: "uppercase",
+                  paddingTop: 9,
+                  paddingBottom: 9,
+                  fontSize: 12,
+                  marginLeft: 30,
+                  fontFamily: "Montserrat, sans-serif",
+                  fontWeight: pathname === "/contact-us" ? 700 : "",
+                }}
+              >
+                Contact Us
+              </Typography>
+            </Link>
           </div>
         </div>
       )}

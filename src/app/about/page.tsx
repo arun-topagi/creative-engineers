@@ -4,17 +4,19 @@ import React, { useState } from "react";
 import About from "@/components/AboutV2";
 import { Typography } from "antd";
 import Banner from "@/components/banner";
+import Underline from "@/components/Underline";
 
 function Index() {
   const { isMobile } = useScreenDetector();
   return (
     <div
       style={{
-        marginLeft: isMobile ? "15px" : "20vw",
-        marginRight: isMobile ? "15px" : "20vw",
+        marginLeft: isMobile ? "15px" : "15vw",
+        marginRight: isMobile ? "15px" : "15vw",
         marginTop: isMobile ? "20px" : "30px"
       }}
     >
+      <Underline title="About Company" />
       <Typography
           style={{
             marginTop: "10px",
@@ -54,7 +56,6 @@ our team members are experienced, focused, and equipped with technical skills to
         </Typography>
          
      <About />
-     <Banner />
     </div>
   );
 }
