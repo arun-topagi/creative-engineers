@@ -13,7 +13,7 @@ function Sectiontwo() {
     <div style={{ width: "100%"}}>
     <Row style={{padding:isDesktop? '1rem 12rem':"1rem 1rem"}}>
     <Col xs={24} xl={12} md={12} lg={12} style={{width:'70%', display:'flex', flexDirection:'column', justifyContent:'center', alignItems:'flex-start'}}>
-    <Typography style={{fontSize:25, fontWeight:600, lineHeight:'2.188rem', marginTop:'1.25rem', marginBottom:'1rem', fontFamily:'Montserrat, sans-serif'}}>
+    <Typography style={{fontSize: isMobile ? 22 : 25, fontWeight:600, lineHeight:'2.188rem', marginTop:'1.25rem', marginBottom:'1rem', fontFamily:'Montserrat, sans-serif'}}>
     Delivering Excellence in
     <br/>
     Precision Engineering 
@@ -21,7 +21,6 @@ function Sectiontwo() {
     Components and Sub-Assemblies
     </Typography>
     <Typography style={{fontSize:'1rem', lineHeight:'1.375rem', marginBottom:'0.625rem', fontFamily:'Montserrat, sans-serif'}}>{json.section2.part2}</Typography>
-    <Button style={{backgroundColor:'#1a1b1f', letterSpacing:2, padding:'0.75rem 1.563rem', textTransform:'uppercase', lineHeight:'1.25rem', height:'min-content', color:'#fff', border:0, borderRadius:0, textDecoration:'none', display:'inline-block', marginBottom:isMobile?'1rem':''}}>Get Started</Button>
     </Col>
     <Col xs={24} xl={12} md={12} lg={12} style={{width:'70%', padding:!isMobile?'2rem':''}}> 
     <Logo src={precission} height={500} width={500}/>

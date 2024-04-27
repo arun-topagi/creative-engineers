@@ -19,8 +19,8 @@ function HeroSection() {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        paddingBottom:isMobile?"":'6rem',
-        paddingTop:isMobile?"":'5rem',
+        paddingBottom: isMobile ? "":'6rem',
+        paddingTop:isMobile ? "5rem":'15rem',
         background: "linear-gradient(to top, #000 12%, #fff)",
         marginLeft: "auto",
         marginRight: "auto",
@@ -37,7 +37,7 @@ function HeroSection() {
         
         <Typography
           style={{
-            fontSize: isMobile ? "1.875rem" : "3.125rem",
+            fontSize: isMobile ? "1.5rem" : "3.125rem",
             fontWeight: 700,
             textAlign: "center",
             lineHeight:isMobile?'2.5rem':'3.875rem',

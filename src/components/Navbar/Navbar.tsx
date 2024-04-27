@@ -54,7 +54,6 @@ function Navbar() {
             height={150}
             width={200}
           />
-          Creative Engineers
           <MenuOutlined
             style={{ fontSize: 25 }}
             onClick={() => setDrawerOpen(!drawerOpen)}
@@ -204,7 +203,6 @@ function Navbar() {
             height={150}
             width={200}
           />
-          Creative Engineers
           <div style={{ display: "flex", alignItems: "center" }}>
             <Link href="/" style={{ textDecoration: "none" }}>
               <Typography
