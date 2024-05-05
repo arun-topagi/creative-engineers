@@ -1,6 +1,5 @@
 "use client";
 import Underline from "@/components/Underline";
-import Logo from "@/components/logo/Logo";
 import { useScreenDetector } from "@/hooks/useScreenDetector";
 import { Tabs, Typography } from "antd";
 import React from "react";
@@ -32,6 +31,7 @@ const Card = ({
   name: string;
   descriptions: Array<any>;
 }) => {
+  const { isMobile } = useScreenDetector();
   return (
     <div>
       <div style={{ display: "flex", justifyContent: "flex-start" }}>
@@ -39,7 +39,7 @@ const Card = ({
           {name}
         </Title>
       </div>
-      <div style={{ display: "flex", justifyContent: "space-around" }}>
+      <div style={{ display: "flex", justifyContent: isMobile ? "flex-start": "space-around", flexDirection: isMobile ? 'column' : 'row' }}>
         {src.map((image: string, index) => (
           <div style={{ display: "flex", flexDirection: "column" }}>
               <Image
@@ -47,7 +47,7 @@ const Card = ({
                 alt="Logo"
                 height={270}
                 width={375}
-                style={{height: "270px", width: "375px"}}
+                style={{height: "270px", width: isMobile ? '305px' : "375px"}}
               />
             <div style={{ marginTop: "10px" }}>
               {descriptions?.[index]?.map((descript) => {
