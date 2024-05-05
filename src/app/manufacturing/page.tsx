@@ -41,7 +41,7 @@ const Card = ({
       </div>
       <div style={{ display: "flex", justifyContent: isMobile ? "flex-start": "space-around", flexDirection: isMobile ? 'column' : 'row' }}>
         {src.map((image: string, index) => (
-          <div style={{ display: "flex", flexDirection: "column" }}>
+          <div key={index} style={{ display: "flex", flexDirection: "column" }}>
               <Image
                 src={MACHINES[image]}
                 alt="Logo"
