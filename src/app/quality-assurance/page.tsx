@@ -5,6 +5,7 @@ import { useScreenDetector } from "@/hooks/useScreenDetector";
 import { Typography } from "antd";
 import React from "react";
 
+const {Title} = Typography
 function Index() {
   const { isMobile } = useScreenDetector();
   return (
@@ -16,7 +17,7 @@ function Index() {
       }}
     >
     <Underline title="Quality Assurance" />
-    <Typography>Coming Soon</Typography>
+    <Title style={{textAlign: 'center', marginTop: '25px'}} level={3}>Coming Soon</Title>
     </div>
   );
 }

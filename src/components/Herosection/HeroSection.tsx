@@ -2,7 +2,7 @@ import { Typography } from "antd";
 import React from "react";
 import * as json from "../../json-data/jsonData.json";
 import { useScreenDetector } from "@/hooks/useScreenDetector";
-import heroImage2 from '../../../public/section/Backgroundimage.webp'
+import heroImage2 from "../../../public/section/Backgroundimage.webp";
 
 function HeroSection() {
   const { isMobile, isTablet, isDesktop } = useScreenDetector();
@@ -19,9 +19,8 @@ function HeroSection() {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        paddingBottom: isMobile ? "":'6rem',
-        paddingTop:isMobile ? "5rem":'15rem',
-        background: "linear-gradient(to top, #000 12%, #fff)",
+        paddingBottom: isMobile ? "" : "6rem",
+        paddingTop: isMobile ? "5rem" : "15rem",
         marginLeft: "auto",
         marginRight: "auto",
         ...backgroundImageStyle,
@@ -31,33 +30,36 @@ function HeroSection() {
         style={{
           display: "flex",
           flexDirection: "column",
-          maxWidth:'78rem',
+          maxWidth: "78rem",
         }}
       >
-        
         <Typography
           style={{
             fontSize: isMobile ? "1.5rem" : "3.125rem",
             fontWeight: 700,
             textAlign: "center",
-            lineHeight:isMobile?'2.5rem':'3.875rem',
-            marginBottom: '1rem',
-            fontFamily:'Montserrat, sans-serif'
+            lineHeight: isMobile ? "2.5rem" : "3.875rem",
+            marginBottom: "1rem",
+            fontFamily: "Montserrat, sans-serif",
           }}
         >
           Precisely Engineered, Creatively Transformed.
         </Typography>
         <Typography
           style={{
-            fontWeight:300,
+            fontWeight: 300,
             textAlign: "center",
             fontSize: isMobile ? "0.875rem" : "1.25rem",
             opacity: 0.6,
             color: "white",
-            lineHeight: isDesktop?'2.125rem':isTablet?'2.125rem':'1.5rem',
-            marginBottom:'0.625rem',
-            fontFamily:'Montserrat, sans-serif',
-            padding:isMobile?'0rem 1rem':'0rem 5rem' 
+            lineHeight: isDesktop
+              ? "2.125rem"
+              : isTablet
+              ? "2.125rem"
+              : "1.5rem",
+            marginBottom: "0.625rem",
+            fontFamily: "Montserrat, sans-serif",
+            padding: isMobile ? "0rem 1rem" : "0rem 5rem",
           }}
         >
           {json.section1.part2}

@@ -8,6 +8,7 @@ import Logo from '../logo/Logo';
 import IndianFlag from '../../../public/section/Indianflag.jpg'
 import MakeInIndia from '../../../public/section/makeinind.jpg'
 import Banner from '../banner';
+import Link from 'next/link';
 const { Title, Paragraph } = Typography;
 
 function Footer() {
@@ -18,9 +19,9 @@ function Footer() {
             <div style={{display:'flex', flexDirection: isMobile ? 'column' : "row" , justifyContent:'space-between', marginLeft: 'auto', marginRight: 'auto', alignItems: isMobile ? 'center' :'flex-start',
              }}>
                 <div style={{margin: '1.2em 0'}}>
-                <a href='' style={{color:'#43464d', textDecoration: 'underline', transition:'opacity .2s', display: isMobile ? "inline-block" : "block"}}>
+                <Link href='/' style={{color:'#43464d', textDecoration: 'underline', transition:'opacity .2s', display: isMobile ? "inline-block" : "block"}}>
                     <Logo className="object-cover" src={companyLogo} height={isMobile ? 150 : 180} width={isMobile ? 250 : 300}/>
-                </a>
+                </Link>
                  <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-around', marginTop: '15px'}}>
                    <Logo className="object-cover" src={IndianFlag} height={28} width={50}/>
                     <Logo className="object-cover" src={MakeInIndia} height={28} width={60}/>

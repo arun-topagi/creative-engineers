@@ -48,12 +48,14 @@ function Navbar() {
             backgroundColor: "rgb(228 235 243 / 57%)",
           }}
         >
-          <Logo
-            className="object-cover"
-            src={companyLogo}
-            height={150}
-            width={200}
-          />
+          <Link href="/">
+            <Logo
+              className="object-cover"
+              src={companyLogo}
+              height={150}
+              width={200}
+            />
+          </Link>
           <MenuOutlined
             style={{ fontSize: 25 }}
             onClick={() => setDrawerOpen(!drawerOpen)}
@@ -197,12 +199,15 @@ function Navbar() {
             backgroundColor: "rgb(228 235 243 / 57%)",
           }}
         >
-          <Logo
-            className="object-cover"
-            src={companyLogo}
-            height={150}
-            width={200}
-          />
+          <Link href="/">
+            <Logo
+              className="object-cover"
+              src={companyLogo}
+              height={150}
+              width={200}
+            />
+          </Link>
+
           <div style={{ display: "flex", alignItems: "center" }}>
             <Link href="/" style={{ textDecoration: "none" }}>
               <Typography
@@ -248,8 +253,12 @@ function Navbar() {
                       fontSize: 12,
                       fontFamily: "Montserrat, sans-serif",
                       marginLeft: 30,
-                  fontWeight: pathname === "/quality-assurance" || pathname === "/manufacturing"  ? 700 : "",
-                }}
+                      fontWeight:
+                        pathname === "/quality-assurance" ||
+                        pathname === "/manufacturing"
+                          ? 700
+                          : "",
+                    }}
                   >
                     Facilities
                     <DownOutlined />

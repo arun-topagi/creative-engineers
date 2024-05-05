@@ -30,7 +30,7 @@ function Index() {
       }}
     >
       <Underline title="Downloads" />
-      <div style={{ marginTop: "15px", marginBottom: "15px" }}>
+      <div style={{ marginTop: "15px", marginBottom: "15px", display: 'flex', justifyContent: isMobile ? 'center' : 'flex-start' }}>
           <Card
             onClick={onButtonClick}
             style={{
