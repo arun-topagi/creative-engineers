@@ -50,7 +50,7 @@ const Card = ({
                 style={{height: "270px", width: isMobile ? '305px' : "375px"}}
               />
             <div style={{ marginTop: "10px" }}>
-              {descriptions?.[index]?.map((descript) => {
+              {descriptions?.[index]?.map((descript: string) => {
                 return (
                   <Paragraph key={index} style={{ marginBottom: "5px" }}>
                     {descript}
