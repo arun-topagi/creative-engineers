@@ -10,11 +10,11 @@ function Index() {
   const { isMobile } = useScreenDetector();
   return (
     <div
-      style={{
-        marginLeft: isMobile ? "15px" : "15vw",
-        marginRight: isMobile ? "15px" : "15vw",
-        marginTop: isMobile ? "20px" : "30px"
-      }}
+    style={{
+      marginLeft: isMobile ? "15px" : "15%",
+      marginRight: isMobile ? "15px" : "15%",
+      marginTop: isMobile ? "20px" : "30px"
+    }}
     >
     <Underline title="Quality Assurance" />
     <Title style={{textAlign: 'center', marginTop: '25px'}} level={3}>Coming Soon</Title>

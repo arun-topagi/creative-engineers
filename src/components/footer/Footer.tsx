@@ -3,7 +3,7 @@
 import { useScreenDetector } from '@/hooks/useScreenDetector';
 import { Image, Typography } from 'antd';
 import React from 'react'
-import companyLogo from '../../assets/logo.png';
+import companyLogo from '../../../public/logo/new_updated_logo.png';
 import Logo from '../logo/Logo';
 import IndianFlag from '../../../public/section/Indianflag.jpg'
 import MakeInIndia from '../../../public/section/makeinind.jpg'
@@ -31,7 +31,7 @@ function Footer() {
                     <Title level={4} style={{margin: '8px 0 0 0'}}>Address</Title>
                     <Paragraph strong>D-83, Five Star MIDC, Shendra, Chh. <br/> Sambhajinagar(Aurangabad)-431154</Paragraph>
                     <Title level={4} style={{margin: '8px 0 0 0'}}>Phone</Title>
-                    <Paragraph strong>+91 9822544596 <br/>+91 8007245957</Paragraph>
+                    <Paragraph strong>+91 8446619690 <br/>+91 9822544596</Paragraph>
                     <Title level={4} style={{margin: '8px 0 0 0'}}>Email ID</Title>
                     <Paragraph strong>creativeengineers2024@gmail.com</Paragraph>
                 </div>

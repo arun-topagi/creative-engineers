@@ -13,7 +13,7 @@ function Index() {
 
   const onButtonClick = () => {
     const link = document.createElement("a");
-    link.href = "https://creativengineers.s3.ap-south-1.amazonaws.com/Company+Profile.pdf";
+    link.href = "https://creativengineers.s3.ap-south-1.amazonaws.com/Company%2BProfile.pdf";
     link.download = "Company Profile.pdf"; // specify the filename
     link.target = "_blank";
     document.body.appendChild(link);
@@ -23,11 +23,11 @@ function Index() {
 
   return (
     <div
-      style={{
-        marginLeft: isMobile ? "15px" : "15vw",
-        marginRight: isMobile ? "15px" : "15vw",
-        marginTop: isMobile ? "20px" : "30px",
-      }}
+    style={{
+      marginLeft: isMobile ? "15px" : "15%",
+      marginRight: isMobile ? "15px" : "15%",
+      marginTop: isMobile ? "20px" : "30px"
+    }}
     >
       <Underline title="Downloads" />
       <div style={{ marginTop: "15px", marginBottom: "15px", display: 'flex', justifyContent: isMobile ? 'center' : 'flex-start' }}>

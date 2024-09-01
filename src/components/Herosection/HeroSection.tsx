@@ -57,9 +57,10 @@ function HeroSection() {
               : isTablet
               ? "2.125rem"
               : "1.5rem",
-            marginBottom: "0.625rem",
+            marginBottom: isMobile ? 0 : "0.625rem",
             fontFamily: "Montserrat, sans-serif",
             padding: isMobile ? "0rem 1rem" : "0rem 5rem",
+            backgroundColor: isMobile ? '#16131ee0' : 'transparent',
           }}
         >
           {json.section1.part2}

@@ -9,8 +9,8 @@ function Index() {
   return (
     <div
       style={{
-        marginLeft: isMobile ? "15px" : "15vw",
-        marginRight: isMobile ? "15px" : "15vw",
+        marginLeft: isMobile ? "15px" : "15%",
+        marginRight: isMobile ? "15px" : "15%",
         marginTop: isMobile ? "20px" : "30px"
       }}
     >
