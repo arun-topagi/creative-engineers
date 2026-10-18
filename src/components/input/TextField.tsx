@@ -58,7 +58,7 @@ function TextField(props: any) {
       // Assuming you want to send a POST request
       await axios.post(apiEndpoint, data, {
         headers: {
-          Authorization: `Bearer ${process.env.AIRTABLE_TOKEN}`,
+          Authorization: `Bearer ${process.env.NEXT_PUBLIC_AIRTABLE_TOKEN}`,
           "Content-Type": "application/json",
         },
       });
