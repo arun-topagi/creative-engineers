@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import StyledComponentsRegistry from "@/lib/AntdRegistry";
+import { ConfigProvider } from "antd";
+import theme from "@/theme/themeConfig";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/footer";
 
-const inter = Inter({ subsets: ["latin"] });
-
 export const metadata: Metadata = {
-  title: "Creative Engineering",
+  title: "Creative Engineers | Precision Engineering & Sub-Assembly Solutions",
+  description:
+    "Creative Engineers offers high-quality precision engineering component manufacturing and sub-assembly solutions.",
 };
-
 
 export default function RootLayout({
   children,
@@ -19,27 +19,26 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body style={{ padding: 0, margin: 0 }}>
+      <body>
         <StyledComponentsRegistry>
-          <div
-            style={{
-              display: "flex",
-              alignContent: "center",
-              height: "100vh",
-              flexDirection: "column",
-              flexWrap: "nowrap",
-              justifyContent: "space-between",
-              alignItems: "stretch",
-            }}
-          >
-            <div>
+          <ConfigProvider theme={theme}>
+            <div
+              style={{
+                display: "flex",
+                minHeight: "100vh",
+                flexDirection: "column",
+                justifyContent: "space-between",
+                alignItems: "stretch",
+              }}
+            >
               <Navbar />
-              {children}
+              <main style={{ flex: 1 }}>{children}</main>
+              <Footer />
             </div>
-            <Footer />
-          </div>
+          </ConfigProvider>
         </StyledComponentsRegistry>
       </body>
     </html>
   );
 }
+

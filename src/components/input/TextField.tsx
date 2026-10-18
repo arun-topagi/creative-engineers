@@ -1,14 +1,29 @@
-import React, { useState } from 'react';
-import { Input, Button, Form} from 'antd';
-import TextArea from 'antd/es/input/TextArea';
-import axios from 'axios';
-import { useScreenDetector } from '@/hooks/useScreenDetector';
+import React, { useState } from "react";
+import { Input, Button, Form, Row, Col } from "antd";
+import {
+  BankOutlined,
+  EnvironmentOutlined,
+  UserOutlined,
+  PhoneOutlined,
+  MailOutlined,
+  SendOutlined,
+} from "@ant-design/icons";
+import TextArea from "antd/es/input/TextArea";
+import axios from "axios";
 
+const inputStyle: React.CSSProperties = {
+  borderRadius: "8px",
+  border: "1px solid #CBD5E1",
+  padding: "0.65rem 1rem",
+  fontSize: "14px",
+  lineHeight: "24px",
+  transition: "all 0.25s ease",
+  height: "46px",
+  backgroundColor: "#FFFFFF",
+};
 
-
-function TextField(props:any) {
+function TextField(props: any) {
   const { setShowThankYou } = props;
-  const { isMobile, isDesktop } = useScreenDetector();
 
   const [form] = Form.useForm();
   const [loading, setLoading] = useState(false);
@@ -19,7 +34,8 @@ function TextField(props:any) {
       setLoading(true);
 
       // Your API endpoint for storing the data
-      const apiEndpoint = 'https://api.airtable.com/v0/appPUoqZIj8lLuFFx/contact-us';
+      const apiEndpoint =
+        "https://api.airtable.com/v0/appPUoqZIj8lLuFFx/contact-us";
 
       // Validate the form fields
       await form.validateFields();
@@ -28,23 +44,22 @@ function TextField(props:any) {
         records: [
           {
             fields: {
-              Company: form.getFieldValue('company'),
-              Address: form.getFieldValue('address'),
-              Name: form.getFieldValue('name'),
-              Phone: form.getFieldValue('phone'),
-              Email: form.getFieldValue('email'),
-              Requirements: form.getFieldValue('requirements'),
+              Company: form.getFieldValue("company"),
+              Address: form.getFieldValue("address"),
+              Name: form.getFieldValue("name"),
+              Phone: form.getFieldValue("phone"),
+              Email: form.getFieldValue("email"),
+              Requirements: form.getFieldValue("requirements"),
             },
           },
         ],
       };
 
       // Assuming you want to send a POST request
-      const response = await axios.post(apiEndpoint, data, {
+      await axios.post(apiEndpoint, data, {
         headers: {
-          Authorization:
-            'Bearer patkjnOYFKvCQnJwT.3181b0cc8dc888562a493011c3a965f775f92f96ded10633f5e2ff2db082bf4d',
-          'Content-Type': 'application/json',
+          Authorization: `Bearer ${process.env.NEXT_PUBLIC_AIRTABLE_TOKEN}`,
+          "Content-Type": "application/json",
         },
       });
 
@@ -55,168 +70,136 @@ function TextField(props:any) {
         setShowThankYou(false);
       }, 5000);
     } catch (error) {
-      console.error('Error submitting form:', error);
+      console.error("Error submitting form:", error);
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', textAlign: isMobile ? 'left' : 'initial' }}>
-      <Form form={form} onFinish={handleSubmit}>
-        <div style={{ display: isDesktop ? 'flex' : '', alignItems: 'center', gap: '2rem' }}>
-          <div style={{ width: isDesktop ? '50%' : '100%', paddingRight: isDesktop ? '10px' : '' }}>
+    <div style={{ width: "100%", textAlign: "left" }}>
+      <Form form={form} onFinish={handleSubmit} layout="vertical">
+        <Row gutter={[20, 4]}>
+          <Col xs={24} md={12}>
             <Form.Item
               name="company"
-              rules={[{ required: true, message: 'Company name is required' }]}
+              rules={[{ required: true, message: "Company name is required" }]}
             >
               <Input
+                prefix={<BankOutlined style={{ color: "#64748B", marginRight: 6 }} />}
                 placeholder="Name of Company"
-                style={{
-                  borderRadius: '0',
-                  borderColor: 'black',
-                  border: '1px solid #9b9a9a',
-                  padding: '1.313rem 1.25rem',
-                  fontSize: '14px',
-                  lineHeight: '26px',
-                  transition: 'border-color .4s',
-                  height: '2.375rem',
-                }}
+                style={inputStyle}
               />
             </Form.Item>
-          </div>
-          <div style={{ width: isDesktop ? '50%' : '100%', paddingRight: isDesktop ? '10px' : '' }}>
+          </Col>
+          <Col xs={24} md={12}>
             <Form.Item
               name="address"
-              rules={[{ required: true, message: 'Address is required' }]}
+              rules={[{ required: true, message: "Address is required" }]}
             >
               <Input
+                prefix={
+                  <EnvironmentOutlined style={{ color: "#64748B", marginRight: 6 }} />
+                }
                 placeholder="Address/City/Location"
-                style={{
-                  borderRadius: '0',
-                  borderColor: 'black',
-                  border: '1px solid #9b9a9a',
-                  padding: '1.313rem 1.25rem',
-                  fontSize: '14px',
-                  lineHeight: '26px',
-                  transition: 'border-color .4s',
-                  height: '2.375rem',
-                }}
+                style={inputStyle}
               />
             </Form.Item>
-          </div>
-        </div>
-        <div style={{ display: isDesktop ? 'flex' : '', alignItems: 'center', gap: '2rem' }}>
-          <div style={{ width: isDesktop ? '50%' : '100%', paddingRight: isDesktop ? '10px' : '' }}>
+          </Col>
+        </Row>
+
+        <Row gutter={[20, 4]}>
+          <Col xs={24} md={12}>
             <Form.Item
               name="name"
-              rules={[
-                { required: true, message: 'Name is required' },
-                // { type: 'email', message: 'Please enter a valid email address' },
-              ]}
+              rules={[{ required: true, message: "Name is required" }]}
             >
               <Input
+                prefix={<UserOutlined style={{ color: "#64748B", marginRight: 6 }} />}
                 placeholder="Name of Contact Person"
-                style={{
-                  borderRadius: '0',
-                  borderColor: 'black',
-                  border: '1px solid #9b9a9a',
-                  padding: '1.313rem 1.25rem',
-                  fontSize: '14px',
-                  lineHeight: '26px',
-                  transition: 'border-color .4s',
-                  height: '2.375rem',
-                }}
+                style={inputStyle}
               />
             </Form.Item>
-          </div>
-          <div style={{ width: isDesktop ? '50%' : '100%', paddingRight: isDesktop ? '10px' : '' }}>
+          </Col>
+          <Col xs={24} md={12}>
             <Form.Item
               name="phone"
-              rules={[{ required: true, message: 'Phone Number is required' }]}
+              rules={[{ required: true, message: "Phone Number is required" }]}
             >
               <Input
+                prefix={<PhoneOutlined style={{ color: "#64748B", marginRight: 6 }} />}
                 placeholder="Phone Number"
-                style={{
-                  borderRadius: '0',
-                  borderColor: 'black',
-                  border: '1px solid #9b9a9a',
-                  padding: '1.313rem 1.25rem',
-                  fontSize: '14px',
-                  lineHeight: '26px',
-                  transition: 'border-color .4s',
-                  height: '2.375rem',
-                }}
+                style={inputStyle}
               />
             </Form.Item>
-          </div>
-        </div>
-        <div style={{ display: isDesktop ? 'flex' : '', alignItems: 'center', gap: '2rem' }}>
-          <div style={{ width: isDesktop ? '47%' : '100%', paddingRight: isDesktop ? '10px' : '' }}>
+          </Col>
+        </Row>
+
+        <Row gutter={[20, 4]}>
+          <Col xs={24}>
             <Form.Item
               name="email"
               rules={[
-                { required: true, message: 'Email is required' },
-                { type: 'email', message: 'Please enter a valid email address' },
+                { required: true, message: "Email is required" },
+                { type: "email", message: "Please enter a valid email address" },
               ]}
             >
               <Input
+                prefix={<MailOutlined style={{ color: "#64748B", marginRight: 6 }} />}
                 placeholder="Email"
-                style={{
-                  borderRadius: '0',
-                  borderColor: 'black',
-                  border: '1px solid #9b9a9a',
-                  padding: '1.313rem 1.25rem',
-                  fontSize: '14px',
-                  lineHeight: '26px',
-                  transition: 'border-color .4s',
-                  height: '2.375rem',
-                }}
+                style={inputStyle}
               />
             </Form.Item>
-          </div>
-        </div>
+          </Col>
+        </Row>
+
         <Form.Item
           name="requirements"
-          rules={[{ required: true, message: 'Requirements is required' }]}
+          rules={[{ required: true, message: "Requirements is required" }]}
         >
           <TextArea
             placeholder="Requirements Details"
+            rows={4}
             style={{
-              marginTop:'1rem',
-              borderRadius: '0',
-              borderColor: 'black',
-              border: '1px solid #9b9a9a',
-              paddingTop: '12px',
-              fontSize: '14px',
-              lineHeight: '26px',
-              transition: 'border-color .4s',
-              marginBottom: '25px',
-              height: '120px',
+              borderRadius: "8px",
+              border: "1px solid #CBD5E1",
+              padding: "0.75rem 1rem",
+              fontSize: "14px",
+              lineHeight: "24px",
+              transition: "all 0.25s ease",
+              backgroundColor: "#FFFFFF",
+              minHeight: "120px",
             }}
           />
         </Form.Item>
-        <div style={{display:'flex', justifyContent:'center'}}>
-        <Button
-          htmlType="submit"
-          loading={loading}
+
+        <div
           style={{
-            backgroundColor: '#1a1b1f',
-            letterSpacing: 2,
-            padding: '0.75rem 1.563rem',
-            textTransform: 'uppercase',
-            lineHeight: '1.25rem',
-            height: 'min-content',
-            color: '#fff',
-            border: 0,
-            borderRadius: 0,
-            textDecoration: 'none',
-            display: 'inline-block',
-            marginBottom: isMobile ? '1rem' : '',
+            display: "flex",
+            justifyContent: "center",
+            marginTop: "0.75rem",
           }}
         >
-          Submit
-        </Button>
+          <Button
+            type="primary"
+            htmlType="submit"
+            loading={loading}
+            icon={<SendOutlined />}
+            style={{
+              backgroundColor: "var(--brand-navy)",
+              letterSpacing: "0.08em",
+              padding: "0 2.5rem",
+              textTransform: "uppercase",
+              height: "48px",
+              fontWeight: 600,
+              color: "#fff",
+              border: 0,
+              borderRadius: "8px",
+              boxShadow: "0 4px 14px rgba(0, 75, 141, 0.28)",
+            }}
+          >
+            Submit
+          </Button>
         </div>
       </Form>
     </div>
@@ -224,3 +207,4 @@ function TextField(props:any) {
 }
 
 export default TextField;
+
